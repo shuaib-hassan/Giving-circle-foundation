@@ -1,7 +1,3 @@
-* {
-    outline: 1px solid red;
-}
-
 /* General Styles */
 html, body {
     font-family: 'Poppins', sans-serif;
@@ -400,24 +396,24 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .nav-links {
+    nav .nav-links {
         display: none; /* Hide the desktop nav links on mobile */
     }
 
     .nav-links.nav-active {
-        position: fixed; /* Changed to fixed to overlay content */
+        position: fixed;
         right: 0;
-        top: 0; /* Align to the top */
+        top: 0;
         background-color: #34495e;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center; /* Center links vertically */
-        width: 70%; /* Don't take full screen width */
-        height: 100vh; /* Take full screen height */
+        justify-content: center;
+        width: 70%;
+        height: 100vh;
         transform: translateX(0%);
         transition: transform 0.5s ease-in;
-        z-index: 100; /* Ensure it's on top */
+        z-index: 100;
     }
 
     .nav-links li {

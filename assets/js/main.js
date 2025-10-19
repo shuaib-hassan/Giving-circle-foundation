@@ -6,13 +6,7 @@ const navSlide = () => {
     const navLinks = document.querySelectorAll('.nav-links li');
 
     burger.addEventListener('click', () => {
-        if (nav.classList.contains('nav-active')) {
-            nav.classList.remove('nav-active');
-            nav.style.transform = 'translateX(100%)';
-        } else {
-            nav.classList.add('nav-active');
-            nav.style.transform = 'translateX(0%)';
-        }
+        nav.classList.toggle('nav-active');
 
         // Animate Links
         navLinks.forEach((link, index) => {
