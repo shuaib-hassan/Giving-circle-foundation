@@ -1,3 +1,4 @@
+/* Final Mobile Fix - 2025-10-19 */
 /* General Styles */
 html, body {
     font-family: 'Poppins', sans-serif;
@@ -396,8 +397,8 @@ footer {
 }
 
 @media (max-width: 768px) {
-    nav .nav-links {
-        display: none; /* Hide the desktop nav links on mobile */
+    nav ul.nav-links {
+        display: none !important; /* Force hide the desktop nav links on mobile */
     }
 
     .nav-links.nav-active {
