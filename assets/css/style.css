@@ -397,42 +397,40 @@ footer {
 }
 
 @media (max-width: 768px) {
-    nav ul.nav-links {
-        display: none !important; /* Force hide the desktop nav links on mobile */
-    }
-
-    .nav-links.nav-active {
+    /* Hide the desktop nav links by default */
+    nav .nav-links {
+        display: flex;
         position: fixed;
         right: 0;
         top: 0;
         background-color: #34495e;
-        display: flex;
+        height: 100vh;
+        width: 70%;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 70%;
-        height: 100vh;
-        transform: translateX(0%);
+        transform: translateX(100%);
         transition: transform 0.5s ease-in;
         z-index: 100;
     }
 
-    .nav-links li {
-        padding: 1rem 0; /* Add some spacing */
+    /* This class is toggled by JS to show the menu */
+    nav .nav-links.nav-active {
+        transform: translateX(0%);
     }
 
-    .nav-links.nav-active {
-        transform: translateX(0%);
+    .nav-links li {
+        padding: 1rem 0;
     }
 
     .menu-toggle {
         display: block; /* Show the burger menu on mobile */
         cursor: pointer;
-        position: absolute; /* Position it relative to the nav bar */
+        position: absolute;
         right: 5%;
         top: 50%;
         transform: translateY(-50%);
-        z-index: 101; /* Ensure it's on top */
+        z-index: 101;
     }
 
     .menu-toggle div {
@@ -455,13 +453,8 @@ footer {
         transform: rotate(45deg) translate(-5px, -6px);
     }
 
-
     .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero h1 {
-        font-size: 2rem; /* Further reduce hero heading */
+        font-size: 2rem;
     }
 
     .hero p {
@@ -469,21 +462,21 @@ footer {
     }
 
     section {
-        padding: 2.5rem 5%; /* Reduce section padding */
+        padding: 2.5rem 5%;
     }
 
     section h2 {
-        font-size: 2rem; /* Reduce section headings */
+        font-size: 2rem;
     }
 
     .causes-container, .team-container, .involvement-options, .contact-container {
-        flex-direction: column; /* Stack flex items vertically */
+        flex-direction: column;
         gap: 1.5rem;
     }
 
     .cause-card, .team-member, .option-card {
-        width: 100%; /* Make cards full-width */
-        max-width: 350px; /* But not too wide on tablets */
+        width: 100%;
+        max-width: 350px;
         margin: 0 auto;
     }
 }
