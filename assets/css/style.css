@@ -1,12 +1,13 @@
 /* General Styles */
-body {
+html, body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #2c3e50; /* Dark Blue */
     color: #ecf0f1; /* Light Gray */
     scroll-behavior: smooth;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%;
+    overflow-x: hidden; /* Stricter rule to prevent horizontal scrolling */
 }
 
 /* Header and Navigation */
@@ -23,6 +24,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
+    position: relative; /* Needed for absolute positioning of nav-links on mobile */
 }
 
 nav .logo {
@@ -395,16 +397,27 @@ footer {
 
 @media (max-width: 768px) {
     .nav-links {
-        position: absolute;
+        display: none; /* Hide the desktop nav links on mobile */
+    }
+
+    .nav-links.nav-active {
+        position: fixed; /* Changed to fixed to overlay content */
         right: 0;
-        top: 60px;
+        top: 0; /* Align to the top */
         background-color: #34495e;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
-        transform: translateX(100%);
+        justify-content: center; /* Center links vertically */
+        width: 70%; /* Don't take full screen width */
+        height: 100vh; /* Take full screen height */
+        transform: translateX(0%);
         transition: transform 0.5s ease-in;
+        z-index: 100; /* Ensure it's on top */
+    }
+
+    .nav-links li {
+        padding: 1rem 0; /* Add some spacing */
     }
 
     .nav-links.nav-active {
@@ -412,8 +425,13 @@ footer {
     }
 
     .menu-toggle {
-        display: block;
+        display: block; /* Show the burger menu on mobile */
         cursor: pointer;
+        position: absolute; /* Position it relative to the nav bar */
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 101; /* Ensure it's on top */
     }
 
     .menu-toggle div {
