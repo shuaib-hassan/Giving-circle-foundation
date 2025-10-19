@@ -35,10 +35,13 @@ nav .logo {
     text-decoration: none;
 }
 
-nav .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
+/* Desktop Navigation Styles */
+@media (min-width: 769px) {
+    nav .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+    }
 }
 
 nav .nav-links li a {
@@ -397,15 +400,15 @@ footer {
 }
 
 @media (max-width: 768px) {
-    /* Hide the desktop nav links by default */
+    /* Mobile Navigation Styles */
     nav .nav-links {
-        display: flex;
         position: fixed;
         right: 0;
         top: 0;
         background-color: #34495e;
         height: 100vh;
         width: 70%;
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
